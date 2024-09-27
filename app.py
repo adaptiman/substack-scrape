@@ -41,7 +41,7 @@ def get_article_by_name(newsletter, title):
 # Gets all the newsletters in a category that have a readership order of magnitude at or above the threshold
 def get_top_newsletters_in_category(category_id: int, readership_threshold: int):
     # Get all the newsletters on the first 2 pages of the category
-    newsletters = ss.newsletter.get_newsletters_in_category(category_id, start_page=0, end_page=2)
+    newsletters = ss.newsletter.get_newsletters_in_category(category_id, start_page=0, end_page=1)
     # Discard newsletters where the ranking OoM is None
     newsletters = [n for n in newsletters if n['rankingDetailFreeIncludedOrderOfMagnitude'] is not None]
     # Discard newsletters where the ranking OoM is less than the defined threshold
